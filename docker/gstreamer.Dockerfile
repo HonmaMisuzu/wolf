@@ -61,7 +61,7 @@ RUN <<_GSTREAMER_INSTALL
         -Drs=disabled \
         -Dtls=disabled \
         -Dgst-examples=disabled \
-        -Dlibav=disabled \
+        -Dlibav=enabled \
         -Dtests=disabled \
         -Dexamples=disabled \
         -Ddoc=disabled \
@@ -73,7 +73,6 @@ RUN <<_GSTREAMER_INSTALL
         -Dgst-plugins-good:ximagesrc=enabled \
         -Dgst-plugins-good:pulse=enabled \
         -Dgst-plugins-bad:x265=enabled  \
-        -Dgst-plugins-bad:va=enabled \
         -Dgst-plugins-bad:qsv=enabled \
         -Dgst-plugins-bad:aom=enabled \
         -Dgst-plugins-bad:nvcodec=enabled  \
@@ -81,7 +80,6 @@ RUN <<_GSTREAMER_INSTALL
         -Dgstreamer-vaapi:x11=disabled \
         -Dgst-plugins-base:gl_winsys=wayland,egl,gbm,surfaceless  \
         -Dvaapi=enabled \
-        -Dva=enabled \
         build
     meson compile -C build
     meson install -C build
