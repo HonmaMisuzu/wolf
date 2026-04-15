@@ -148,13 +148,13 @@ std::vector<std::string> linked_devices(std::string_view gpu) {
 GPU_VENDOR get_vendor(std::string_view gpu) {
   if (auto override_vendor = utils::get_env("WOLF_OVERRIDE_GPU_VENDOR")) {
     auto vendor_str = utils::to_lower(override_vendor);
-    if (vendor_str.find("nvidia") != std::string::npos) {
+    if (vendor_str == "nvidia") {
       logs::log(logs::info, "GPU vendor override: NVIDIA (via WOLF_OVERRIDE_GPU_VENDOR)");
       return NVIDIA;
-    } else if (vendor_str.find("intel") != std::string::npos) {
+    } else if (vendor_str == "intel") {
       logs::log(logs::info, "GPU vendor override: Intel (via WOLF_OVERRIDE_GPU_VENDOR)");
       return INTEL;
-    } else if (vendor_str.find("amd") != std::string::npos) {
+    } else if (vendor_str == "amd") {
       logs::log(logs::info, "GPU vendor override: AMD (via WOLF_OVERRIDE_GPU_VENDOR)");
       return AMD;
     } else {
