@@ -68,6 +68,10 @@ Additional env variables useful when debugging:
 |GST_DEBUG
 |2
 |Gstreamer debug print, see https://gstreamer.freedesktop.org/documentation/tutorials/basic/debugging-tools.html?gi-language=c[debugging-tools]
+
+|WOLF_OVERRIDE_GPU_VENDOR
+|_(not set)_
+|Override automatic GPU vendor detection. Accepts `nvidia`, `intel`, or `amd` (case-insensitive). Useful in WSL2 environments where the virtual GPU may return an unrecognised PCI vendor ID.
 |===
 
 [#data_setup]
